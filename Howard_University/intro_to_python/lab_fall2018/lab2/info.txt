@@ -1,0 +1,100 @@
+Practice with If and While
+You've been given example code in example.py showing how to use if and while statements to make a simple program that will take in a number from the user, and, for every number between the given number and twice the given number, do two things:
+1) Print out the current value.
+
+2) Print out if the current value is odd or even.
+
+Run the program with python3 example.py in the terminal.
+
+Play with the example code for a while. Try putting in different values to see what happens. Make sure to try lots of different things, such as negative integers, floats, and non-integer values. If your program hangs, simple hit control-C to kill it. Once you're gotten some practice playing with it, try changing some things and seeing what happens! Can you make it go until the number is 3 times as large as the original number? Can you make it work for negative numbers?
+
+Assignment
+The graded part of this assignment will be done in the file main.py. 
+
+Write a program that will convert values from Fahrenheit to Celsius, and vice-versa. The program should ask the user for a temperature by printing "Enter a temperature:", and then take in the temperature.
+
+The program should then ask the user which scale that temperature is in by printing "Is that in C or in F?", and then taking in either a "C" or an "F".
+
+Whichever scale the temperature is in, the program should convert it to the other one and print out "That's $TEMPERATURE in $OTHER_SCALE." The program should then repeat this process until the user types in "exit" for the temperature value.
+
+When the user enters "exit", the program should print out "Goodbye!" and nothing else, then terminate.
+
+There should be a newline after each prompt (in other words, when you type in the temperature or C/F, you should be typing on the next line, not on the same line as the prompt). You can either put the prompt in a print() statement to accomplish this, or put a newline character '\n' at the end of your prompt in the input() statement.
+
+ 
+
+Example input/output: (Your code should match this input/output exactly!)
+
+Enter a temperature:
+
+32
+
+Is that in C or in F?
+
+F
+
+That's 0.0 in Celsius.
+
+Enter a temperature:
+
+0
+
+Is that in C or in F?
+
+C
+
+That's 32.0 in Fahrenheit.
+
+Enter a temperature:
+
+exit
+
+Goodbye!
+
+Check If Your Code Passed
+Right click on main.py, and click on "Mimir: Submit file".
+
+
+
+Click on "Select your project" and choose Lab 2, then click submit.
+
+
+
+To verify that your submission is correct, click on "View Submission".
+
+
+
+Scroll down to the bottom of that page. You should see a screen that looks like this, but with more test cases. Each test case should say either "Passed" or "Failed".
+
+
+
+If you have any failing test cases, simply click on the name of the test to see the input, expected output, and the difference between the expected output and your code's output.
+
+
+
+Green text is output that is required, but your code is not providing. Red text is output that should not be there, but that your code is printing anyway.
+
+ 
+
+One of the test cases is named "Hidden Test Case". This test case will not show you the expected output, only if you have passed it or not.
+
+Example Code (Just in case you lose it.)
+# Don't change this line.
+def run():
+    # Replace the example code below with your code.
+    int_counter = int(input("Enter an integer: "))
+    int_stop = int_counter * 2
+    while int_counter < int_stop:
+        print("Counter is currently: " + str(int_counter))
+        if int_counter % 2 == 0:
+            print("Counter is even!")
+        else:
+            print("Counter is odd!")
+        int_counter += 1
+    print("Done!")
+
+# Don't change these lines.
+if __name__ == "__main__":
+    run()
+
+

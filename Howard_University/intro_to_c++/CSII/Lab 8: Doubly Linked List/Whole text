@@ -1,0 +1,137 @@
+#include <cstdlib>
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+struct Flight{
+  int flightNum = 0; 
+  string destination = "";
+};
+
+struct Node{
+  Flight flight;
+  Node* prev = NULL;
+  Node* next = NULL;
+};
+
+class LinkedList{
+  public:
+    void Append(string dest, int flight);
+    void Prepend(string dest, int flight);
+    void Remove(string dest, int flight);
+    void Print();
+    void PrintReverse();
+  private:
+    Node* head = NULL;
+    Node* tail = NULL;
+};
+
+void LinkedList::Append(string dest = "None", int flight = 136){
+  Node* insert_node = new Node();
+  insert_node->flight.destination = dest;
+
+  if(head == NULL){
+    head = insert_node;
+    tail = insert_node;
+  }else{
+    insert_node->prev = tail;
+    tail->next = insert_node;
+    tail = insert_node;
+  }
+
+}
+void LinkedList::Prepend(string dest = "None", int flight = 136 ){
+  Node* insert_node = new Node();
+  insert_node->flight.destination = dest;
+
+
+  if(head == NULL){
+    head = insert_node;
+    tail = insert_node;
+  }else{
+    head->prev = insert_node;
+    insert_node->next = head;
+    head = insert_node;
+  }
+  
+}
+
+void LinkedList::Remove(string dest = "None", int flight = 136){
+  bool found = false;
+  Node* temp = head;
+  Node* tmp_prev = NULL;
+  Node* tmp_next = NULL;
+
+  if(head == NULL){
+    cout << "Cannot remove Node. This LinkedList is empty." << endl;
+  }
+
+  
+  while(temp != NULL){
+    if(head->flight.destination == dest){
+      head = head->next;
+      head->prev = NULL;
+      found = true;
+      break;
+    }else if(temp->flight.destination == dest){
+      if(temp == tail){
+        tail = tail->prev;
+        tail->next = NULL;
+        found = true;
+        break;
+      }
+
+      tmp_prev = temp->prev;
+      tmp_next = temp->next;
+
+      tmp_prev->next = tmp_next;
+      tmp_next->prev = tmp_prev;
+      found = true; 
+      break;
+
+    }else{
+      temp = temp->next;
+    } 
+  }
+
+  if(found == false){
+    cout << "There is no Node with this flight destination name." << endl; 
+  }
+
+}
+
+void LinkedList::Print(){
+  Node* temp = head;
+  
+  while(temp != NULL){
+    cout << temp->flight.destination << endl;
+    temp = temp->next;
+  }
+}
+
+void LinkedList::PrintReverse(){
+  Node* temp = tail;
+
+  while(temp != NULL){
+    cout << temp->flight.destination << endl;
+    temp = temp->prev;
+  }
+
+}
+
+int main(){
+  LinkedList linked_list;
+  linked_list.Append("B"); 
+  linked_list.Append("C"); 
+  linked_list.Prepend("A");
+  linked_list.Append("B");
+  linked_list.Print();
+  
+  cout << endl;
+  linked_list.Remove("B");
+  linked_list.Print();
+
+  cout << endl;
+  linked_list.PrintReverse();
+}

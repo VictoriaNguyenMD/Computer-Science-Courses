@@ -1,0 +1,25 @@
+#include <iostream>
+#include <list>
+/* 
+
+A vector is a resizable array. It's elements are stored next to each other in a contiguous block of memory, so that the position of each can be calculated quickly; this is known as random access. Inserting and removing elements from the middle requires moving all the later elements, so can be rather slow.
+
+A list is a linked list. The elements are scattered around memory, and each has pointers to the next and previous element. You can only find an element by following the chain of pointers, which might be rather slow; this is known as sequential access. But elements can be inserted and removed just by modifying a few pointers, so that can be quite fast.
+*/
+
+int main(){
+  //list container: doubly linked list
+  list<string>::iterator iter; //pointer. Traverse through the list
+  list<string>::riterator riter;
+
+  for(riter = my_name.begin(); riter != my_name.end; riter+++/)//reverses
+
+  //range-based for loop
+  for(iter = my_name.begin(); iter != my_name.end(); iter++){
+    cout << *iter << endl;
+
+  for(string name:my_name){
+    cout << name << " ";
+  }
+  }
+}

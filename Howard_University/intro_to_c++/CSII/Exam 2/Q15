@@ -1,0 +1,37 @@
+Write assumptions before beginning the code
+
+Given the Queue and Queue operations shown below, show the Queue contents after each operation
+
+Jazmeene
+Alexander
+Halle
+Carey  
+
+1. Push("Lena");
+
+2. Pop();
+
+3. Pop();
+
+We assume that the functions have properly been implemented and Jazmeene represents the front and Carey represents the end of the queue.
+
+Jazmeene
+Alexander
+Halle 
+Carey
+
+Jazmeene
+Alexander
+Halle
+Carey
+Lena
+
+Alexander
+Halle
+Carey
+Lena
+
+Halle
+Carey
+Lena
+

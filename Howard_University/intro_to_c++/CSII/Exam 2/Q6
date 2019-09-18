@@ -1,0 +1,3 @@
+/*Why do a team of programmers use separate files to hold the class specification/definition and implementation file?*/
+
+Easier for the user to read and to work with other programmers to implement a larger project.

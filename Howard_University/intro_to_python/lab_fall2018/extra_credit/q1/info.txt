@@ -1,0 +1,8 @@
+Nested Loops
+Fill out the body of the call_nested function in main.py below. Ignore call_me.py, it is only for grading.
+
+ 
+
+The function call_nested() takes in two integers, n and m. You should write a nested loop, where the outer loop runs n times, and the inner loop runs m times each time the outer loop runs. Inside the inner loop should be the line call_me.call(), which is used to verify that your loop ran the proper number of times.
+
+

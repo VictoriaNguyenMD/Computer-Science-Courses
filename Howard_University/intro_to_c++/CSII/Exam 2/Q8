@@ -1,0 +1,22 @@
+/*Write the code, making sure to include the library(ies), to create a program that 
+
+creates a list to hold names called nameList
+adds Jenny Sarah and Tom into the list
+Prints the list by removing elements from the list starting with the last element*/
+#include <list>
+#include <string>
+#include <iostream>
+
+using namespace std; 
+
+int main(){
+  list<string> nameList;
+  nameList.push_back("Jenny");
+  nameList.push_back("Sarah");
+  nameList.push_back("Tom");
+
+  while(!nameList.empty()){
+    cout << nameList.back() << endl;
+    nameList.pop_back();
+  }
+}

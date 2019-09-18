@@ -1,0 +1,31 @@
+/*Given the code below for Shape, write the code to create a class called Circle that inherits from Shape. Circle should contain a variable called radius and have both a default and nondefault constructor and mutators and accessors; */
+
+class Shape {
+
+  private:
+
+      double area;
+
+  public:
+
+      Shape();
+
+      Shape(double userArea);
+
+      double getArea() const;
+
+      void setArea(int userArea);
+
+}
+
+class Circle: public Shape{
+  public:
+    Circle(); //default
+    Circle(int radius); //nondefault
+
+    void setRadius(int radius);
+    int getRadius();
+  private:
+    int radius;
+
+}

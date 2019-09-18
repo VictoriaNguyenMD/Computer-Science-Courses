@@ -1,0 +1,11 @@
+/*Write your assumptions before you start to write the code
+Using the struct implementation of a Singly Linked List,
+create a text message node called TextNode that holds the message of the text as a string.
+The TextNode should also contain what's necessary to make it a singly linked list node.*/
+
+We assume that the singly linked list has been implemented properly and the code runs properly with the exception of the Node implementation.
+
+struct TextNode{
+  string msg = "";
+  TextNode* nxt = NULL;
+};

@@ -1,0 +1,43 @@
+/* 
+Victoria Nguyen
+02762017
+
+Linked List
+Step 1: Create a Struct Flight, Struct Node, and class LinkedList in NODE.h.
+Step 2: Create the methods of Append, Prepend, Remove, Print, and PrintReverse in DoublyList.cpp
+Step 3: Create a Linked List object and write the functions of the LinkedList in main.cpp
+Step 4: Make sure the object and functions work for a doubly linked list
+
+*/
+
+#include <iostream>
+#include <string>
+#include "NODE.h" //Allows us to use the LinekdList class and create a linked_list object
+
+using namespace std;
+
+int main() {
+  LinkedList linked_list; //Creates an instance of the class LinkedList
+  string flight_num = "0136";
+  
+  //Appends the destinations to a LinkedList via nodes and prints
+  cout << "Flight Records for HowardAir Flight CSCI" << flight_num << ":" << endl;
+  linked_list.Append("Dallas");
+  linked_list.Append("Houston");
+  linked_list.Append("Chicago");
+  linked_list.Append("Baltimore");
+  linked_list.Append("Detroit");
+  linked_list.Append("Denver");
+  linked_list.Append("Kansas City");
+  linked_list.Append("Minneapolis");
+  
+  //Prints out the destination in forward order
+  linked_list.Print();
+  
+  //An empty line to separate forward vs reverse
+  cout << endl;
+  
+  //Prints out the destinations in reverse order
+  cout << "Reverse Flight Records for HowardAir Flight CSCI" << flight_num << ":" << endl;
+  linked_list.PrintReverse();
+}

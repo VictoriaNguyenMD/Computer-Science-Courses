@@ -1,0 +1,6 @@
+Nested Arrays
+Fill out the body of this function so that it will return the sum of all the numbers in a one-layer-deep nested array.
+
+For instance, if array was [[1, 2, 1], [0, 10, 0], [-1, -2, -1]], it should return 10.
+
+

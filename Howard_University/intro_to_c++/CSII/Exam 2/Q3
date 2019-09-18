@@ -1,0 +1,5 @@
+	Assume class Car: public Vehicle{...}
+
+Vehicle's protected member variables can be called by a member function of Car.
+Answers:	
+Yes

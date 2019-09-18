@@ -1,0 +1,13 @@
+Write your assumptions
+Write the code to determine if a node, called aNode, in a doubly linked list is the head. The function should return true if it is the head or false if it is not.
+Name the function isHead()
+
+Assume that the LinkedList is implemented and self->head refers to the head node, which is an address. Node input is an address as well.
+
+bool isHead(Node node_input){
+  if(node_input == self->head){
+    return True;
+  }else{
+    return False;
+  }
+}

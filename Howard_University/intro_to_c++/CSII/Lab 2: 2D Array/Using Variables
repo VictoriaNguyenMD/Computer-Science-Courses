@@ -1,0 +1,57 @@
+/* 
+Victoria Nguyen
+02762017
+
+Algorithm for Reading A File & Writing A New File
+Step 1: Read the input file stream
+Step 2: Calculate the average of the first two columns
+Step 3: Write the data into a output file steam
+Step 4: Repeat until the end
+*/
+
+#include <iostream>
+#include <cstdlib> 
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+  string inFS_Name = "Lab 2: 2D Array/lab01222019.txt";
+  string outFS_Name = "Lab 2: 2D Array/lab0122201_output. txt";
+  ifstream inFS; // Input file stream, there is a "stream position pointer" to indicate location of where the file left off when reading it
+  ofstream outFS; // Output file stream
+  double var1, var2, avg;
+
+  //OpenFiles
+  inFS.open(inFS_Name);
+  outFS.open(outFS_Name);
+
+  if(!inFS.is_open()){
+    cout << "Could not open my file " << inFS_Name;
+    return 1;
+  }
+
+  if(!outFS.is_open()){
+    cout << "Could not open my file " << outFS_Name;
+    return 1;
+  }
+
+  //Reading the original file and writing the new file
+  while(!inFS.eof()){
+    inFS >> var1;
+    inFS >> var2;
+    avg = (var1 + var2)/2; //Yields a double
+
+    outFS << var1 << "\t" << var2 << "\t" << avg << endl;
+  }
+
+  
+  //Done with file. Close both files.
+  inFS.close();
+  outFS.close();
+  
+  return 0;
+}
+
+

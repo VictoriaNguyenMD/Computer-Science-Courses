@@ -1,0 +1,53 @@
+DOUBLE UPDATE: Not all functions are required. You only need to complete is_pair(), is_three_of_a_kind(), is_four_of_a_kind() and is_flush(). The others are extra credit. See https://github.com/SethBorder/HowardCS100Lab4 for the updated starter code, which includes how to do is_pair().
+ 
+
+UPDATE: Read the section at the bottom for some big hints about how to solve is_pair().
+
+ 
+
+We're going to make a poker game! But don't worry, most of the work has already been done for you. All you need to do is write the functions to determine if a given poker hand qualifies as a particular scoring hand. (A pair, straight, flush, etc.) If you're not familiar with poker hands, Wikipedia has a good explanation of them, as do many other sites.
+
+ 
+
+We'll be representing our cards as strings, with the suit abbreviated to one letter. So "AH" would be the Ace of Hearts, "2C" would be the 2 of Clubs, and "10S" would be the 10 of Spades. The entire hand would be represented as, for example, ["KC", "JH", "5D", "7S", "5H"]. Functions get_value, get_numeric_value and get_suit have been provided so you can easily get just the suit or just the value of a card. The get_numeric_value function (which is at the bottom of this file) converts all cards to a single integer. These integers will match the face value of the card until you get up to face cards, at which point J=11, Q=12, K=13, and A=14. A card with face value N greater will have a returned value of N greater as well. So the value of "JC" would be 11, which is 5 more than the value of "6H", which would be 6. Consider using this function to simplify things if you're getting stuck on the face cards! 
+
+ 
+
+Aces are high (their value is above the king) in this version of poker, so you don't need to worry about treating them as both high and low.
+
+ 
+
+Definition of get_numeric_value: (The definition in the file seems to have gone AWOL)
+
+def get_numeric_value(card):
+    return rank.index(card[:-1]) + 2
+
+ 
+
+Hint: If you Google around a bit for how to count the number of times a value appears in a list, you'll find a very useful list function that you can use for is_pair(), is_three_of_a_kind(), etc. (Python's arrays are technically lists, and not arrays, so that's why it's a list function, and not an array function.)
+
+Another hint: There's also a method that will sort the values in a list, which will put identical values next to each other.
+
+ 
+
+Keep all function names the same! Otherwise the grading won't work.
+
+ 
+
+To test your functions, you do one of two things.
+
+ 
+
+Option 1: Type python3 into the terminal to open up a Python console. In this console, type import main. Then type code to test your functions, such as print(main.is_pair(["AC", "AC", "5D", "3C", "9H"])) and hit enter. The Python shell will execute your code immediately. You have to include the main. prefix on your functions if you do it this way, or you can do from main import * to avoid needing the prefix.
+
+To exit the terminal, either type exit() or hit control+D. You'll need to exit the shell and restart it (including doing your imports again!) every time you save your code in order for it to pick up the changes.
+
+ 
+
+Option 2: Replace where it says poker() at the bottom of the file, under if __name__ == "__main__": and add some code there to test your functions, such as print(is_pair(["AC", "AC", "5D", "3C", "9H"])). This will make Python not run the whole poker game when you run python3 main.py and instead it will run whatever code you have after the if __name__ == "__main__": line.
+
+ 
+
+Solving is_pair():
+
+To determine if there is a pair in a given hand, we need to know if there are any values that are repeated. If we need to know if any values are repeated, then we'll clearly need to get the values. Since there are multiple values, we'll need an array to store the values in. Once we have that array set up, the first step is to loop over hand, using square brackets to get each card in the hand, one at a time. For each card, we'll want to call the get_value() function on it, and store the result into our value array. Once we have the values from all the cards stored into the value array, we want to loop over the value array. This time we'll be using the .count() array function to check how many times each element appears in the value array. If, for any value, the .count() function returns a number higher than 1, that means that the value exists at least twice, which means it is a pair. If we find a pair, we can simply return True immediately. If we finish our loop without finding any pairs, then we should return False.

@@ -1,0 +1,14 @@
+DESCRIPTION
+This lab will be a brief demonstration of the difference between passing by reference and passing by value.
+
+Passing by reference is the technical name for what we've talked about as storing a treasure map into a box, where you can have multiple variables all pointing to the same thing, and if any of them are used to change the object, the object will change for all of them.
+
+Passing by value is the technical name for what happens with simple variables, like integers, booleans, floats, and so on, where the value is stored directly in the box, and saying "a = b" will simply make a copy of the value in b and put it into a.
+
+The lab file contains a simple Number class, and we're going to see how passing by reference and passing by value are different. There are two functions, class_math and simple_math, which both do the same things. However, one does them with classes (passing by reference) and the other does them with normal integers (passing by value). Two of the functions they call, add_class and add_simple, are already written for you, and you just need to fill out the rest. There should be add, subtract, multiply, and divide functions, with each one having a _simple and a _class version.
+
+Once you have them all built, run the code and see what the two different math functions output! Make sure you understand why their outputs are different! That's all there is to this lab, enjoy the long weekend!
+
+ 
+
+Also, the homework in the "More On Functions and Classes" packet will be due next Wednesday.

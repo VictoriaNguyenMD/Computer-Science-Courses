@@ -1,0 +1,168 @@
+DESCRIPTION
+Practice makes perfect! This lab we're going to write a whole bunch of very small classes. There are 10 total assignments, but none of them require more than 20 lines of code. Each class will be its own file, and there shouldn't be anything in the file except for the class. Each class has a starter file, which will explain the requirements, which are also listed below, as well as giving an example of how the class should be able to be used and what the results should be. You only have to do 8 of the 10 classes for full credit. (AgeTracker does not count, as it is an example.)
+
+ 
+
+Some things to note:
+
+The code at the top of each file, if you uncomment it and put it under your class, should run and return the results indicated.
+Functions that return a value do not automatically print that value. So the example code won't show any output unless you put print statements in it.
+Functions that don't return a value will not show anything even if you do print them, and will result in empty variables if you attempt to store them. (Similar to how a = array.append(5) will result in a being empty.)
+In order to test these, you can either put the example code under the class and run them like normal, or do from AgeTracker import * in the Python terminal and then call, for example, age_tracker = AgeTracker(), age_tracker.add_person("John", 55), etc.
+To submit, you'll want to right click on the practice_practice_practice folder and select "Submit Folder", in order to submit all files at once.
+ 
+
+The requirements below will explain what each class should look like. The self argument is omitted, since it will be present in all functions. When there are multiple arguments, they must appear in the order I list them. I have included an example, AgeTracker.py, so that you can see what a  requirements file next to a completed solution.
+
+ 
+Mini-Class Requirements:
+AgeTracker.py (Example):
+This class will keep track of the ages of multiple people, and allow us to add people, remove people, and let people have birthdays.
+
+The class should be named AgeTracker.
+The __init__ method should take no arguments.
+There should be an add_person method that takes in a string, and an integer. The person and their age should be stored.
+There should be a remove_person method that takes in a string. The person and their age should be removed.
+There should be a have_birthday method that takes in a string. The person named should have their age increased by 1.
+There should be a get_birthday method that takes in a string and returns the person's age, if the name is currently stored, and -1 if the name is not stored.
+ 
+
+OddAdder.py:
+This class will let people add items one at a time, or as an array, and will keep track of all of the odd items added to it, as well as telling people what the total sum of all the things its keeping track of is.
+
+This class should be named OddAdder.
+The __init__ method should take no arguments.
+There should be an add_item method that takes in an integer and keeps track of it if it is odd, but not if it is even.
+There should be an add_items method that takes in an array of integers and keeps track of all of the ones that are odd, but not any of the even ones.
+There should be an add_all method that takes no parameters, and returns the sum of all the items the class is keeping track of.
+ 
+
+Combiner.py:
+This class takes two arrays of integers in when created, and can calculate either all possible sums or all possible multiplications consisting of one item from each array.
+
+The class should be named Combiner
+The __init__ method should take two int arrays as arguments.
+There should be a combine_addition method that takes no parameters and returns a list of the results of all additions consisting of one item in the first list, and one item in the second list.
+There should be a combine_addition method that takes no parameters and returns a list of the results of all multiplications consisting of one item in the first list, and one item in the second list.
+Order does not matter for the returned results.
+
+ 
+
+Math.py:
+This class lets us start with a number, and then do a series of mathematical operations to it, and then get our result.
+
+The class should be named Math
+The __init__ method should take an integer as an argument.
+There should be an add method that takes an integer and adds that to the current result.
+There should be a multiply method that takes an integer and multiplies the current result by that.
+There should be a subtract method that takes an integer and subtracts that from the current result.
+There should be a divide method that takes an integer and divides the current result by that.
+There should be a get_result method that takes no arguments and returns the current result.
+ 
+
+Library.py
+This class simulates a library. We can add books, check books out, return books, and check if the library currently has a given book.
+
+The class should be named Library.
+The __init__ method should take no arguments.
+There should be an add_book method that takes a string and records that the library has that book in stock.
+There should be a check_out_book method that takes a string and records that the book is checked out from the library.
+There should be a return_book method that takes a string and records that the library has that book in stock.
+There should be a has_book method that takes a string and returns True if that book is in stock at the library, and False if it is not.
+ 
+
+FoodCalculator.py
+This class allows users to add the prices of food items one at a time, and to calculate the tax, tip, and total cost for the added food items.
+
+The class should be named FoodCalculator.
+The __init__ method should take no arguments.
+There should be an add_item method that takes a float and adds it to the current price.
+There should be a get_tax method that takes a float representing the tax rate and returns the tax on the current price.
+There should be a get_tip method that takes a float representing the tax and a float representing the tip, and returns the cost of the tip on the current price, assuming tip is calculated after tax.
+There should be a method called get_total_cost that takes in a float representing the tax, and a float representing the tip, and returns the total cost of the meal based on the current cost, tax, and tip.
+Note the tax and tip are represented as percentages, not fractions, so for 10.5% tax, we would pass in 10.5, not 0.105.
+
+ 
+
+Incrementor.py
+This class takes in values at create time, as well as one at a time or as arrays, and has a method to increment all values.
+
+The class should be named Incrementor.
+The __init__ method should take an array of integers as an argument, and keep track of all of them.
+There should be an add_value method that takes in a single integer and keep track of it.
+There should be an add_values method that takes in an array of integers and keeps track of all of them.
+There should be an increment_values method that adds 1 to every item the class is currently keeping track of.
+There should be a get_values method that returns the current values the class is keeping track of.
+ 
+
+ShoppingList.py
+This class lets the user add and remove items from a virtual cart, keeping track of both the items and their prices, and being able to tell the user the total cost of all the items in their cart.
+
+The class should be named ShoppingList.
+The __init__ method should take no arguments.
+There should be an add_item method that takes a string representing the item name and an integer representing its price, and keeps track of that item.
+There should be a remove_item method that takes a string representing an item name, and removes the item with that name from the card. (You may assume names will be unique within a cart.)
+There should be a get_total method that returns the sum of the costs of all the items in the cart.
+ 
+
+ClubLine.py
+This class simulates a line outside of a club. People can get into the line, leave the line, or get let into the club. At any time, the user can also request to look at the line.
+
+The class should be named ClubLine.
+The __init__ method should take an array of strings, representing names of people already in line.
+There should be an add_person method that takes in a string representing the name of the person who got in line.
+There should be a person_leaves method with takes in a string representing the name of the person who just left the line.
+There should be a person_admitted method which admits the person at the front of the line, removing them from the line.
+There should be a get_line method, which returns the current line.
+ 
+
+EvenRemover.py
+This class lets users add items into the class, get the items currently in the class, and remove all even items from the class.
+
+The class should be named EvenRemover.
+The __init__ method should take an array of integers and store them.
+There should be an add_item method that takes a single integer and stores it.
+There should be an add_items method that takes an array of integers and stores them.
+There should be a remove_evens method that removes all even numbers currently stored.
+There should be a get_items method that returns all items currently stored.
+ 
+
+Logic.py
+This class lets the user start out with a boolean value, apply boolean operations to it, and see the result at any point.
+
+The class should be named Logic.
+The __init__ method should take a boolean value, which will be the initial value.
+There should be a method called boolean_and, which takes one boolean value, then and's it with the current value.
+There should be a method called boolean_or, which takes one boolean value, then or's it with the current value.
+There should be a method called boolean_not, which not's the current value.
+There should be a get_value method, which returns the current value.
+ 
+
+Test Cases
+The test cases for this lab are unit tests, instead of input/output matching. They look like this:
+
+ages = AgeTracker()
+ages.add_person("John", 32)
+ages.add_person("Jane", 40)
+assert ages.get_birthday("John") == 32
+assert ages.get_birthday("Jane") == 40
+ages.have_birthday("John")
+ages.remove_person("Jane")
+assert ages.get_birthday("John") == 33
+assert ages.get_birthday("Jane") == -1
+You can look at the unit tests just like you could at the previous test cases. The assert lines say that Python expects the thing that comes afterwards to evaluate to True. If the thing after an assert does not evaluate to True, the test case will fail, and Mimir will tell you which assertion caused it to fail. So if we saw this:
+
+F
+======================================================================
+FAIL: test_unit (__main__.UNITTEST)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+File "UNITTEST.py", line 8 in test_unit
+    assert ages.get_birthday("John") == 33
+AssertionError
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+It would be telling us that the line "assert ages.get_birthday("John") == 33" evaluated to False, or, in other words, that ages.get_birthday("John") returned something other than 33. Once you know which assertion is failing, use that to try to figure out what's wrong with your program!

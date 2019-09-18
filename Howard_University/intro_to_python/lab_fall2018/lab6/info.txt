@@ -1,0 +1,20 @@
+DESCRIPTION
+We looked at how we build Python's List in class, and now we're going to actually do it. Implement all of the methods a Python list has (as well as one extra one):
+
+.append()
+.extend() # Your extend only needs to work on arrays/lists.
+.insert()
+.remove()
+.pop() # This should work with or without a parameter. Read https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions for details on how to do this, or Google "python optional parameters".
+.clear()
+.index() # You don't need to include the start and end parameters.
+.count()
+.sort() # You don't need to include the key or reverse parameters.
+.reverse()
+.copy() # This should return a copy of the list. Don't just return the existing list. Additionally, the returned value should be an instance of your List class, and not a Python array.
+.get_array() # This function should just return the underlying Python list you're building your methods on top of. You should write it first, as it is used in all the autograding.
+ 
+
+Your class should be named List, in a file named list.py. Your code should only use indexing (e.g. array[i]), not any built-in Python methods. Do not use len(), or any other built-in functions (e.g. sorted()) either, except for range(). The __init__ method should take in one parameter, specifying the maximum size of the array. It should make an array of that size with all the values initially set to None. When values are removed, None should be used to designate an empty space.
+
+The functions should have the same parameters as in they do in the built-in list class. It is fine if your code throws errors when attempting to add elements while full, remove elements when empty, or in other similar invalid situations. To see the details of what the functions should do, look at https://docs.python.org/3/tutorial/datastructures.html#more-on-lists, or use the Python terminal to try them out

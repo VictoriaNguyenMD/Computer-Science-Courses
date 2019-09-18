@@ -1,0 +1,63 @@
+/* 
+Victoria Nguyen
+02762017
+
+Algorithm for Using Classes to Point to Read in a File with Messages
+Step 1: Create a Message Details class
+Step 2: Define public functions and private members
+Step 3: Set up each function, the constructor, and the overloading constructor
+Step 4: Open the file and read the message line by line
+*/
+
+#include <iostream> 
+#include <string>
+#include <fstream> 
+
+using namespace std; 
+
+class MessageDetails{
+	public: //Accessor and "get" has return type
+    void setMessage(string); //Mutator
+    string getMessage();//Accessor
+    void print() const;
+  private: 
+    string message;
+
+};
+
+void MessageDetails::setMessage(string info){
+  message = info;
+}
+
+string MessageDetails::getMessage(){
+  return message;
+}
+
+void MessageDetails::print() const{
+  cout << message << endl;
+}
+
+int main() {
+  string message;
+  string inFS_Name = "Lab 4: Classes/TextMessage.txt";
+  ifstream inFS;
+
+  //Open File
+  inFS.open(inFS_Name);
+
+  if(!inFS.is_open()){
+    cout << "Could not open my file " << inFS_Name;
+    return 1;
+  }
+  
+  //Reads File
+  while(!inFS.eof()){
+    MessageDetails data;
+    getline(inFS, message);
+    data.setMessage(message);
+    data.print();
+  }
+  //Closes file
+  inFS.close();
+  return 0;
+}

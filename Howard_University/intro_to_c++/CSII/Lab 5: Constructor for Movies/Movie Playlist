@@ -1,0 +1,86 @@
+/* 
+Victoria Nguyen
+02762017
+
+Algorithm for Using Classes, Default, and Non-Default Constructors for Movie Type
+Step 1: Create a "Video" class with default and non-default Constructors
+Step 2: Create the class' functions and member variables
+Step 3: Create a vector to store the playlist
+Step 4: Implement a way to randomize the vector
+Step 5: Print out the vector
+*/
+
+#include <iostream> //Allows to use input/output
+#include <string> //Permits the use of strings
+#include <vector> //Permits the use of vectors
+#include <algorithm> //Permits shuffling
+#include <random> //Permits random number generator
+
+using namespace std;
+
+//Creates a class called Movie with public and private members. Members are variables or functions of the class.
+class Movie{
+  public:
+    Movie();
+    Movie(string inTitle, string inType, string inDuration);
+    void print() const; //const does not allow you to change any private members within it 
+  private: //accessible only by this class
+    string title, type, duration;
+};
+
+//Default constructor. If there is not input, then this function will run and assign title, type, and duration to "None." This is part of the class.
+Movie::Movie(){ //:: scope resolution operator
+  title = "None";
+  type = "None";
+  duration = "None";
+}
+
+//Non-default constructor. If there is an input, then this function will run and assign the title, type, and duration to the input information. This is part of the class.
+Movie::Movie(string inTitle, string inType, string inDuration){
+  title = inTitle;
+  type = inType;
+  duration = inDuration;
+}
+
+//Prints the name, type, and duration on one line. The "const" is used so that title/type/duration cannot be changed within the print function. If you do title = "Error" within this function, the code will not run since any private member of the class cannot be changed within the function
+void Movie::print() const{
+  cout << "Title: " << title << endl;
+  cout << "Type: " << type << endl;
+  cout << "Duration: " << duration << endl;
+}
+
+int main(){  
+  //Creates objects of Movie type and assigns the name, type, duration
+  Movie first("The Hate You Give", "Movie", "1 hour and 45 minutes");
+  Movie second("Crazy Rich Asians", "Movie", "2 hours and 10 minutes");
+  Movie third("If Beale Street Could Talk", "Movie", "2 hours and 15 minutes"); 
+
+  //Creates a vector of Movie objects
+  vector<Movie> movies{first, second, third};
+
+  //Prints out the playlist title
+  cout << "Now Playing \"My Movie Playlist\":" << endl;
+
+  //Shuffles the vector. movies.begin() and movies.end() returns an interator that cannot be printed. random_device randomizes how the vector is shuffled. This is used rather than default_random_engine() because default_random_engine() is pseudorandom (uses an algorithm), such that when we press "run" each time, the initial output will be the same always
+  shuffle(movies.begin(), movies.end(), random_device());
+
+  int count = 1;
+
+  //Iterates through the vector
+  for(Movie x: movies){
+    cout << "*******************************************"<< endl;
+    if(count==1){// if first item
+      cout << "Now Playing:" << endl;
+    }else if(count==2){ //if second item
+      cout << "Up Next:" << endl;
+    }else{ //if other items
+      cout << "Then:" << endl;
+    }
+    count++; //increments the counter
+    x.print(); //calls print on the object
+  }
+
+  return 0; //this is not printed out because we are not printing out the main function
+}
+
+

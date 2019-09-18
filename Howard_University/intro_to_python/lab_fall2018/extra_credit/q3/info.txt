@@ -1,0 +1,6 @@
+Classes
+Fill out the two functions in the class below.
+
+set_number() should update the class' number variable to be equal to the value passed in to it.
+
+calculate_double() should update the class' double variable to be twice number.

@@ -1,0 +1,85 @@
+/* 
+Victoria Nguyen
+02762017
+
+Stack
+Step 1: Create a Stack
+Step 2: Write the push, pop, peek, and print functions within the public
+Step 3: Create a list instance that will indicate the stack
+Step 4: Implement the functions
+Step 5: Test the code
+*/
+
+#include "Stack.h"
+#include <iostream>
+#include <list>
+#include <string>
+#include <iterator>
+
+
+using namespace std;
+
+
+int main(){
+  Stack stack;
+  string name = "";
+  string funct_choice = "";
+  string math_choice = "";
+  int user_num = 0;
+  
+  //Asks the user for his/her name
+  cout << "What is your name?" << endl;
+  cin >> name;
+  cout << endl;
+  
+  //Greets the user
+  cout << "Hello " << name << endl;
+  
+  //Provides different options to the user
+  cout << endl;
+  cout << "Enter a symbol for the following functions: " << endl;
+  cout << "?: Print the stack/queue. If it is empty, just say so." << endl;
+  cout << "^: Peek the top of the stack/front of the queue." << endl;
+  cout << "~: Push to the stack/queue." << endl;
+  cout << "O: Take the top two elements of the stack/front two elements of the queue, perform whatever operation the user gives (addition, subtraction, multiplication, division, or modulus) and take the result and push it to the stack/queue." << endl;
+  cout << "L: returns the length of the stack/queue." << endl;
+  cout << "E: Exit the program." << endl;
+  
+  //User chooses an option  
+  cout << endl;
+  cout << "Which symbol do you choose? ";
+  cin >> funct_choice;
+  cout << funct_choice << endl;
+  
+  
+  //Alternatively, you can use switch(input) with case "E":, case "?", etc.
+  while(true){
+     if(funct_choice == "E" || funct_choice == "e"){ //user inputs E or e
+         exit(EXIT_SUCCESS);
+      }else if(funct_choice == "?"){//User inputs ?
+         stack.print();
+      }else if(funct_choice == "^"){//user inputs ^
+        cout << "The top of the stack is " << stack.peek();
+      }else if(funct_choice == "~"){//User inputs ~
+        cout << "Write a number: ";
+        cin >> user_num;
+        cout << endl;
+        stack.push(user_num);
+        cout << user_num << " pushed";
+      }else if(funct_choice == "O" || funct_choice == "o"){//User inputs O or o
+        cout << "What operation do you want to perform: addition, subtraction, multiplication, division, or modulus?" << endl;
+        cin >> math_choice;
+        cout << endl;
+        stack.math_first_two(math_choice);
+      }else if(funct_choice == "L" || funct_choice == "l"){//User inputs L or l
+         cout << "The length is " << stack.length() << endl;
+      }else{
+         cout << "You did not input a valid option." << endl;
+      }
+      
+      cout << endl;
+      cout << "Which symbol do you choose? ";
+      cin >> funct_choice;
+      cout << funct_choice << endl;
+  }
+}

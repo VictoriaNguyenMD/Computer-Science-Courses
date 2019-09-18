@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+  string firstInitial;
+  string lastInitial;
+  string bisonID;
+
+};
+
+int main() {
+  Student student1;
+  student1.firstInitial = "J";
+  student1.lastInitial = "D";
+  student1.bisonID = "0000";
+
+  Student student2;
+  student2.firstInitial = "V";
+  student2.lastInitial = "N";
+  student2.bisonID = "0001";
+
+  Student students[2]; // Array of Struct
+  int sizeOfArray = 2;
+
+  students[0] = student1;
+  students[1] = student2;
+
+  for(int i = 0; i < sizeOfArray; i++){
+    cout << students[i].firstInitial << students[i].lastInitial << " " << students[i].bisonID << endl;
+  }
+  
+}

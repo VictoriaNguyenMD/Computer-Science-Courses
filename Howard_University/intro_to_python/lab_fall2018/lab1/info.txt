@@ -1,0 +1,27 @@
+Lab 1
+Input
+For most programs, we will want to read in information from the user. For that, Python uses a function called `input()`. When you write `input()` in a program, the program will let the user enter a string. That value of that string is used wherever the `input()` is in your code, much as the value of a variable is used in place of a variable. For example:
+
+```
+
+string_foo = input()
+
+print(string_foo)
+
+```
+
+If I were to type “Howard” and then hit enter when running this program, it would print out “Howard”. The way it works is like this: The program starts, and tries to execute the first line. Since there is an `input()` there though, it waits until I type in a string and hit enter. Once I’ve done that, the value of `input()` becomes whatever I’ve typed. (“Howard”, in my example.) That value is then stored in the variable named foo. Then we proceed to the next line, and the value of foo is printed!
+
+ 
+
+This lab consists of three parts - you've been given files 1.py, 2.py, and 3.py, each of which corresponds to one of the three parts.
+
+ 
+
+String Concatenator - 1.py
+Write a program that will use `input()` twice to accept two strings from the user, then concatenate those strings and print them out.
+
+ 
+
+Simple Addition - 2.py
+Write a program that will take in two numbers from the user (using `input()`!), add them, and print out the result.

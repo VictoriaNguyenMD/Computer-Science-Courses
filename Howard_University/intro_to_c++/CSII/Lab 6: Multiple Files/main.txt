@@ -1,0 +1,73 @@
+/* 
+Victoria Nguyen
+@02762017
+
+Lab 6: Creating Separate Files for Classes
+
+[Step 1]: Create a ClassName.h, ClassName.cpp,and a main file. 
+[Step 2]: Write the #include guards in order to prevent the header file from being included multiple times in the cpp file. Refer to this for further information https://stackoverflow.com/questions/3246803/why-use-ifndef-class-h-and-define-class-h-in-h-file-but-not-in-cpp
+[Step 3]: Write the class for ItemToPurchase containing private and public members in the h file. This is known as the "Class declaration" header file.
+[Step 4]: In the cpp file, create a default and non default constructor.
+[Step 5]: Write functions within the cpp file corresponding to the ItemToPurchase class
+[Step 6]: Create a vector in main storing objects of ItemToPurchase type
+[Step 7]: Use a for loop to loop through the objects and ask the user details about each object (name, price, quantity)
+
+
+Note: cpp means C preprocessor. It processes the C program language before it is compiled
+*/
+
+#include <iostream>
+#include <string>
+#include <vector> //permits vector usage
+#include "ItemToPurchase.h" //includes the header
+
+using namespace std;
+
+int main(){
+  string name;
+  int price, quantity;
+  int total = 0; 
+  const int NUM_ELEMENTS = 2; //constant
+  vector<ItemToPurchase> list(NUM_ELEMENTS);
+
+  //loops through the vector for each object of type ItemToPurchase
+  for(int i = 0; i < NUM_ELEMENTS; i++){
+    cout << "Item " << (i+1) << endl;
+    
+    //getline has to be used since there is a space between the string. Otherwise, it would consider the second word as the "2nd" element
+    cout << "Enter the item name:" << endl;
+    getline(cin, name);
+
+    cout << "Enter the item price:" << endl;
+    cin >> price;
+
+    cout << "Enter the item quantity:" << endl;
+    cin >> quantity;
+
+    //calls each objects' functions and set the name, price, and quantity
+    list[i].SetName(name);
+    list[i].SetPrice(price);
+    list[i].SetQuantity(quantity);
+
+    cout << endl;
+
+    //Used to ignore the \n created by the cin buffer. Getline will get the \n if not ignored. https://stackoverflow.com/questions/25475384/when-and-why-do-i-need-to-use-cin-ignore-in-c
+    cin.ignore();
+  }
+
+  cout << "TOTAL COST" << endl;
+  //Loops through vector to calculate total cost
+    for(int i = 0; i < NUM_ELEMENTS; i++){
+      cout << list[i].GetName() << " " 
+           << list[i].GetQuantity() << " @ $" 
+           << list[i].GetPrice() << " = $" 
+           << (list[i].GetQuantity() * list[i].GetPrice()) << endl;
+
+      total += (list[i].GetQuantity() * list[i].GetPrice());
+
+    }
+
+    cout << endl;
+    cout << "Total: $" << total << endl;
+  return 0;
+}

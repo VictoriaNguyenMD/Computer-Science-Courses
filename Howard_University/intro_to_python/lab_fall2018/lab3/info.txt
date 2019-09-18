@@ -1,0 +1,148 @@
+DESCRIPTION
+This week we will be making a program that will allow users to track temperature changes over time. They should be able to add a new entry, remove an entry, edit an entry, and print the current entries.
+
+You should a different function for each of these options. You will be graded on your use of functions.
+
+In order to tell the program what to do, there should be a prompt that shows the user the available actions, and asks the user which one they want to do.
+
+As last time, all inputs should be on a new line.
+
+ 
+
+The prompt should look like this:
+
+What should the program do?
+[A]dd a reading.
+[E]dit a reading.
+[P]rint existing readings.
+[R]emove a reading.
+[Q]uit.
+
+ 
+
+If the user is adding a reading, they should see the following message:
+
+What was the temperature?
+
+ 
+
+If the user is editing a reading, they should see the following messages:
+
+Edit reading at which position?
+
+What should the value be instead?
+
+ 
+
+If the user is removing a reading, they should see the following message:
+
+Remove reading at which position?
+
+ 
+
+If the user wants to print out the values, the format should be like this:
+
+1: 45.0
+2: -32.4
+3: -40.2
+
+Note that for printing, editing, and removing, the list should start at 1, not at 0.
+
+The program should print "Goodbye!" when the user selects to quit.
+
+ 
+
+Example input/output:
+
+What should the program do?
+[A]dd a reading.
+[E]dit a reading.
+[P]rint existing readings.
+[R]emove a reading.
+[Q]uit.
+A
+What was the temperature?
+45
+What should the program do?
+[A]dd a reading.
+[E]dit a reading.
+[P]rint existing readings.
+[R]emove a reading.
+[Q]uit.
+A
+What was the temperature?
+32
+What should the program do?
+[A]dd a reading.
+[E]dit a reading.
+[P]rint existing readings.
+[R]emove a reading.
+[Q]uit.
+A
+What was the temperature?
+-40.2
+What should the program do?
+[A]dd a reading.
+[E]dit a reading.
+[P]rint existing readings.
+[R]emove a reading.
+[Q]uit.
+P
+1: 45.0
+2: 32.0
+3: -40.2
+What should the program do?
+[A]dd a reading.
+[E]dit a reading.
+[P]rint existing readings.
+[R]emove a reading.
+[Q]uit.
+E
+Edit reading at which position?
+2
+What should the value be instead?
+-32.4
+What should the program do?
+[A]dd a reading.
+[E]dit a reading.
+[P]rint existing readings.
+[R]emove a reading.
+[Q]uit.
+P
+1: 45.0
+2: -32.4
+3: -40.2
+What should the program do?
+[A]dd a reading.
+[E]dit a reading.
+[P]rint existing readings.
+[R]emove a reading.
+[Q]uit.
+R
+Remove reading at which position?
+3
+What should the program do?
+[A]dd a reading.
+[E]dit a reading.
+[P]rint existing readings.
+[R]emove a reading.
+[Q]uit.
+P
+1: 45.0
+2: -32.4
+What should the program do?
+[A]dd a reading.
+[E]dit a reading.
+[P]rint existing readings.
+[R]emove a reading.
+[Q]uit.
+Q
+Goodbye!
+
+ 
+
+This lab will be due on 9/18/18 at 11:59 PM.
+
+You have unlimited submissions, and you can click on the test cases once you've submitted to see what is wrong with your output.
+
+As always, you are welcome to talk about this with your classmates, but copying their code, either by copy+paste or by writing down what they have on their screen, is grounds to fail the class. So please don't do it!

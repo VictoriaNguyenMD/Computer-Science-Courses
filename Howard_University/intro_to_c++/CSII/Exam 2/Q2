@@ -1,0 +1,4 @@
+/* 	
+How does a Stack store data?*/
+
+It stores data using LIFO, aka last in first out, meaning that it adds and removes values to/from the top.

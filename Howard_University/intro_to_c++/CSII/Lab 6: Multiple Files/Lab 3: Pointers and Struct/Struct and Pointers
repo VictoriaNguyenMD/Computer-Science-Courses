@@ -1,0 +1,62 @@
+/* 
+Victoria Nguyen
+02762017
+
+Algorithm for Using a Pointer In a Struct to Point to Read in a File with Messages
+Step 1: Create a struct containing member variables
+Step 2: Create a struct pointer
+Step 3: Read in the file
+Step 4: Print out the file messages
+*/
+
+#include <iostream> //input/output stream
+#include <string>
+#include <fstream> //input/output file stream
+#include <iomanip> // allows to use setw() for field width
+using namespace std; 
+
+struct MessageDetails{
+	int sentHrValue = 1;
+	int sentMinTime = 30;
+	string info;
+  MessageDetails *next = nullptr;
+} *current, *temp; //structure variable (optional)
+
+int main() {
+  //Create a variable inFS_Name for the file name
+  current = new MessageDetails;
+  int passingTime = 0;
+  string inFS_Name = "Lab 3: Pointers and Struct/TEXTConvo.csv";
+  ifstream inFS;
+
+  //Open File
+  inFS.open(inFS_Name);
+
+  if(!inFS.is_open()){
+    cout << "Could not open my file " << inFS_Name;
+    return 1;
+  }
+
+  //Output Time and Message Headers
+  cout << setw(10) << left << "Time" << "|";
+  cout << setw(12) << right << "Message" << endl;
+  cout << "------------------------------" << endl;
+
+  //Reading the File
+  while(!inFS.eof()){
+    getline(inFS, current->info);
+    cout << current->info << endl;
+
+    cout << "Sent at " << current->sentHrValue << ":" << current->sentMinTime+passingTime << "pm" << endl;
+    
+    temp = new MessageDetails;
+    current->next = temp;
+    current = temp;
+
+    passingTime++;
+  }
+
+   //Done with file. Close both files.
+  inFS.close();
+  return 0;
+}

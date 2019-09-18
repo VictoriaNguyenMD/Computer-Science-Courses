@@ -1,0 +1,3 @@
+/*What linked list function would a queue call to put data onto a queue?*/
+
+ListAppend() assuming this is a LinkedList function that appends a node to the end.

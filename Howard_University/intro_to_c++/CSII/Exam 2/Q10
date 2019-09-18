@@ -1,0 +1,19 @@
+/*Write your assumptions before starting
+you don't have to write the includes at the top, assume that's written for you
+Write the code to count the number of nodes in a doubly linked list
+The name of the doubly linked list node is called Node
+name your function NodeCount
+*/
+
+Assume there is one file and this is part of the LinkedList class. We can acccess the member variable head. We assume nxt is part of the Node.
+
+int NodeCount(){
+  temp = head;
+  count = 0;
+
+  while(temp != NULL){
+    count += 1;
+    temp = temp->nxt;
+  }
+  return count;
+}

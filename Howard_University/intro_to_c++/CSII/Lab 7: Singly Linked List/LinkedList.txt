@@ -1,0 +1,33 @@
+/* 
+Victoria Nguyen
+02762017
+
+Linked List
+Step 1: Create a LinkedList class and struct node
+Step 2: Create append function of the LinkedList class
+Step 2: Append o,m,u,t,e to linked list
+Step 3: Create insertAfter function of the LinkedList class
+Step 4: Insert e, p
+Step 5: Create insertBefore function of the LinkedList class
+Step 6: Insert c
+*/
+
+#include <iostream>
+#include "LinkedList.h"
+
+using namespace std;
+
+int main() {
+   LinkedList linked_list;
+   linked_list.append('o');
+   linked_list.append('m');
+   linked_list.append('u');
+   linked_list.append('t');
+   linked_list.append('e');
+   linked_list.insertBefore('o','c');
+   linked_list.insertAfter('m','p');
+   linked_list.insertAfter('e','r');
+   linked_list.print();
+
+   return 0;
+}

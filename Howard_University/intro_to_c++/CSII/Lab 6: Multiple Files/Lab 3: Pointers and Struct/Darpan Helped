@@ -1,0 +1,69 @@
+/* 
+Victoria Nguyen
+02762017
+
+Algorithm for Using a Pointer In a Struct to Point to Read in a File with Messages
+Step 1: Read the input file stream
+Step 2: Calculate the average of the first two columns
+Step 3: Write the data into an output file steam
+Step 4: Repeat until the end
+*/
+
+#include <iostream> //input/output stream
+#include <string>
+#include <fstream> //input/output file stream
+#include <iomanip> // allows to use setw() for field width
+using namespace std; 
+
+struct MessageDetails{
+	int sentHrValue = 1;
+	int sentMinTime = 30;
+	string info;
+  MessageDetails *next = nullptr;
+} *current, *temp; //structure variable (optional)
+
+int main() {
+  current = new MessageDetails;
+  MessageDetails *head = current;
+  int passingTime = 0;
+  string inFS_Name = "Lab 3: Pointers and Struct/TEXTConvo.csv";
+  ifstream inFS;
+
+  //Open File
+  inFS.open(inFS_Name);
+
+  if(!inFS.is_open()){//Any number except for 0 is True
+    cout << "Could not open my file " << inFS_Name;
+    return 1; //0 = Worked, 1 = Failed (individualistic)
+  }
+
+  //Output Time and Message Headers
+  cout << setw(10) << left << "Time" << "|"; //left justify
+  cout << setw(12) << right << "Message" << endl; //right justify
+  cout << "------------------------------" << endl;
+
+  bool isFirst = true;
+
+  //Reading the File
+  while(!inFS.eof()){
+    if(isFirst){
+      getline(inFS, current->info);
+      cout << current->sentHrValue << ":" << setw(8) << left << current->sentMinTime+passingTime << "|";
+      cout << current->info << endl;
+      
+    }else{
+      temp = new MessageDetails;
+      current->next = temp;
+      current = temp;
+
+      getline(inFS, current->info);
+      cout << current->sentHrValue << ":" << setw(8) << left << current->sentMinTime+passingTime << "|";
+      cout << current->info << endl;   
+    }
+    passingTime++;
+  }
+
+  //Done with file. Close both files.
+  inFS.close();
+  return 0;
+}

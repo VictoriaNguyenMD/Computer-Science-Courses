@@ -1,0 +1,50 @@
+/* 
+Victoria Nguyen
+02762017
+
+Algorithm for Guessing Game
+Step 1: Pick a upper and lower bound for a random number 
+Step 2: Generate a random number between lower bound and upper bound 
+Step 3: Store the random number in a variable
+*/
+
+#include <iostream>
+#include <cstdlib> 
+#include <ctime> //Start at 0. Break time down into miliseconds. Always should be done before you call the random function
+
+using namespace std;
+
+int main() {
+
+  int userVal;
+  int targetNum;
+  int count;
+  int maxNum = 3;
+
+  srand(time(0)); // unique seed, pseudorandom. The argument is the "seed". If we start fromm the same seed, we will get the same sequence of numbers. For non-reproducible, use time(NULL) or time(). Think of it as "pick aplace to start"
+  targetNum = (rand() % 5) + 23;
+
+  for(count = 0; count < maxNum; count++){
+    cout << "Enter a number between 23 and 27: " << ends; //You would use << for transfering data steam to the left most operator. The "+" is for string concatenations
+    cin >> userVal;
+
+    if(userVal == targetNum){
+      cout << "Good job! You're psychic!" << endl;
+      break;
+    }else if(userVal < targetNum){
+      if(count == maxNum-1){//If the user reached their last guess but it is incorrect
+        cout << "Wonk Wonk! You're out of tries! The number is " << targetNum << "." << endl;
+        break;
+        }
+      cout << "Getting close! Guess higher." << endl;
+    }else{
+      if(count == maxNum-1){//If the user reached their last guess but it is incorrect
+        cout << "Wonk Wonk! You're out of tries! The number is " << targetNum << "." << endl;
+        break;
+        }
+      cout << "Getting closer! Guess lower." << endl;
+      }
+  }
+}
+
+

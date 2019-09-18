@@ -1,0 +1,37 @@
+DESCRIPTION
+We're going to be building the Car class from the handout, only we'll do the whole thing. If you haven't yet, finish reading through the packet before starting this lab.
+
+ 
+
+1) Your class should be named Car, and the file should be named car.py.
+
+2) Your class should have the following attributes. You may name them whatever you want, these are the aspects, not the class variables:
+
+Model
+Year
+License Plate Number
+Speed (in mph)
+Acceleration (in mph/s)
+Color
+Horn Sound
+3) Your class should have the following actions, represented by the described methods. 
+
+honk() - Should take no arguments, and return the horn sound.
+describe() - Should take no arguments, and should return the string, "A $COLOR $YEAR $MODEL, with license plate number $LICENSE_PLATE_NUMBER.". (So, we might have "A yellow 2016 Tesla Model S, with license plate number 80J 4CK.".) [Look into Python's .format() method to make this easier.]
+change_plate(new_plate) - Should take one argument, a string representing a new license plate, and store it as the new license plate number.
+how_fast() - Should take no arguments and return the speed.
+accelerate(time) - Should take a float number of seconds as an argument, and, using the car's acceleration, calculate how fast the car will be going after accelerating for that many seconds and store it as the new speed.
+brake(time) - Should take a float number of seconds as an argument, and, using 10 mph/s as the braking deceleration, calculate how fast the car will be going after braking for that many seconds and store it as the new speed.
+4) Your class' __init__ should take arguments for all of the aspects, in the order they are listed above. (I'd recommend doing the following part after you have all of the other tests passing.) All of the aspects after the license plate should be optional, with the following defaults:
+
+Speed - 0.0
+Acceleration - 10.0
+Color - "black"
+Horn Sound - "HONK"
+ 
+
+GIR Student Feedback Survey (Let the GIR folks know what you like/dislike about the class, so they can improve it!): https://docs.google.com/forms/d/e/1FAIpQLScA5FI4wW5W-T9iE8WqsS7sNxrTOo4WSYHQktuub0LR5FfWkg/viewform?usp=sf_link
+
+ 
+
+Article for Do Now points: https://okepi.wordpress.com/2014/08/21/how-to-become-a-programmer-or-the-art-of-googling-well/

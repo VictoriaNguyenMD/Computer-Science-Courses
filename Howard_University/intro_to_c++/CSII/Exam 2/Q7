@@ -1,0 +1,12 @@
+/*Write your assumptions before starting to answer the question
+Using the struct implemetation of a Doubly Linked List  create a node called TextNode
+TextNode should contain the text message as a string
+TextNode should also contain whatever it is that makes the struct a doubly linked list node*/
+
+/*We assume the rest of the doubly linked list is properly implemented and we just need to implement the struct TextNode.*/
+
+struct TextNode{
+  string msg = "";
+  TextNode* nxt = NULL;
+  TextNode* prev = NULL;
+}

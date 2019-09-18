@@ -1,0 +1,58 @@
+/* 
+Victoria Nguyen
+02762017
+
+Algorithm for Reading & Writing A File Using 2D Array
+Step 1: Read the input file stream
+Step 2: Calculate the average of the first two columns
+Step 3: Write the data into an output file steam
+Step 4: Repeat until the end
+*/
+
+#include <iostream>
+#include <cstdlib> 
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+  string inFS_Name = "Lab 2: 2D Array/lab01222019.txt";
+  string outFS_Name = "Lab 2: 2D Array/lab0122201_output.txt";
+  ifstream inFS; // Input file stream
+  ofstream outFS; // Output file stream
+  double newArray[50][2];
+  double avg;
+
+  //OpenFiles
+  inFS.open(inFS_Name);
+  outFS.open(outFS_Name);
+
+  if(!inFS.is_open()){
+    cout << "Could not open my file " << inFS_Name;
+    return 1;
+  }
+
+  if(!outFS.is_open()){
+    cout << "Could not open my file " << outFS_Name;
+    return 1;
+  }
+
+  //Reading the original file and writing the new file
+  for(int row = 0; row < 50; row++){
+    for(int col = 0; col < 2; col++){
+      inFS >> newArray[row][col];
+    }
+    
+    avg = (newArray[row][0] + newArray[row][1])/2;
+    outFS << newArray[row][0] << "\t" << newArray[row][1] << "\t" << avg << endl; //Writes it into the new file
+  }
+   
+  //Done with file. Close both files.
+  inFS.close();
+  outFS.close();
+  
+  return 0;
+}
+
+

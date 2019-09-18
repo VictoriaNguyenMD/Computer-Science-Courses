@@ -1,0 +1,16 @@
+/*Create a template function called Find that if given a key can find the key in a list.
+Name the list valueList
+Name the key key
+The template function should return the index of the element if the key matches.
+If the key is not found it should return -1.*/
+
+
+template<typename T>
+int find(list<T> valueList, T key){
+  for(int i = 0; i < valueList.size(); i++){
+    if(valueList[i] == key){
+      return i;
+    }
+  }
+  return -1;
+}

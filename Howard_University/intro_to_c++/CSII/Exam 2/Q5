@@ -1,0 +1,34 @@
+/*Given the code below for Vehicle and Boat that inherits from Vehicle. Create a main.cpp that creates two different objects for Boat called boat1 and boat2. Set the speed for boat2 at 25 MPH and boat1 at 30 mph.*/
+
+#include <iostream>
+using namespace std;
+
+class Vehicle {
+public:
+  void SetSpeed(int speedToSet) {
+    speed = speedToSet;
+  };
+
+  void PrintSpeed() {
+    cout << speed;
+  };
+
+  private:
+    int speed;
+};
+
+class Boat: public Vehicle {
+  public:
+    void PrintCarSpeed() {
+      cout << "Driving at: ";
+      PrintSpeed();
+      };
+
+};
+
+int main() {
+  Boat boat1, boat2;
+  boat1.SetSpeed(30);
+  boat2.SetSpeed(25);
+  return 0;
+}
