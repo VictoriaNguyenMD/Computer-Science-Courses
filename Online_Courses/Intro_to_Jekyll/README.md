@@ -32,6 +32,7 @@ To understand the different folders within website_name:
 **Gemfile:** file used with Ruby. Stores dependencies (eg. jekyll, minima -- minima is the website's them)
 
 **Creating a post: Front matter**
+
 Front matter is information we store about the pages of the website (eg. title, date, author, etc.). The information in blogpost files are written in MarkDown.
   1. Move into the _posts_ directory by typing: `cd _posts`.
   2. View the only file in the directory by typing: `vim file_name`.
