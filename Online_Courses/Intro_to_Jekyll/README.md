@@ -14,7 +14,7 @@ To install Ruby & RubyGems:
 3. Type: `gem -v`. Press enter. If you have gem installed, you will see something like: gem 2.5.2.
 
 To install Jekyll:
-1. In the terminal, type: `gem install jekyll bundler`. We are using the RubyGems package manager to install Jekyll.
+1. In the terminal, type: `gem install jekyll bundler`. Thee RubyGems package manager "gem" installs Jekyll.
 
 **Creating a Basic Website**
 
