@@ -13,4 +13,5 @@ Taken in January 2019, this course exposes students to computer programming usin
 **Grade Received:** A
 
 ## Prototyping Courses
-### [1. Introduction to Jekyll](
+### [1. Introduction to Jekyll](https://github.com/VictoriaNguyenMD/Computer_Science_Courses/tree/master/Online_Courses/Intro_to_Jekyll)
+Jekyll is a way to create a website without knowing much code. GitHub pages uses Jekyll in the background to build website pages. The websites created by Jekyll are (1) static, (2) harder to hack, (3) quick to load, and (4) simple.
