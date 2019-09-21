@@ -4,6 +4,7 @@ Jekyll is a framework that transforms your plain texts into static website witho
 *Follow the steps below in order.*
 
 **Downloading the Programs**
+
 To use Jekyll, you need to install 2 things:
 1. Ruby, a programming language Jekyll was built with.
 2. RubyGems, a package manager for Ruby that allows us to use, update, install (eg. Jekyll), and maintain Ruby programs.
